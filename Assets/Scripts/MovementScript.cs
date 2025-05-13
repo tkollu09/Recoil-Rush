@@ -3,7 +3,6 @@ using UnityEngine;
 public class MovementScript : MonoBehaviour
 {
     [SerializeField] private float force = 20f;
-    [SerializeField] private GameObject gun;
 
     private Vector3 mousePosition;
     private Vector2 direction;
@@ -16,14 +15,10 @@ public class MovementScript : MonoBehaviour
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         direction = (transform.position - mousePosition).normalized;
-        if (Input.GetMouseButtonUp(0))
-        {
-            Recoil();
-        }
     }
 
 
-    private void Recoil()
+    public void Recoil()
     {
         
         rb.linearVelocity = Vector2.zero;

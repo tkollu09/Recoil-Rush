@@ -1,9 +1,17 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class AmmoScript : MonoBehaviour
 {
-    [SerializeField] private static int ammo = 0;
-
+    [SerializeField] int inAmmo = 0;
+    [SerializeField] TextMeshProUGUI scoreText;
+    private static int ammo;
+    private void Start()
+    {
+        ammo = inAmmo;
+        scoreText.text = ammo.ToString();
+    }
     public int Ammo { get { return ammo; } }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,8 +21,19 @@ public class AmmoScript : MonoBehaviour
             ammo++;
         }
     }  
+
+    public static void Shoot()
+    {
+        ammo--;
+    }
+
     private void Update()
     {
-        Debug.Log(ammo);
+        scoreText.text = ammo.ToString();
+    }
+
+    public static int getAmmo()
+    {
+        return ammo;
     }
 }
