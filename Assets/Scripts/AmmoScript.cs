@@ -36,9 +36,4 @@ public class AmmoScript : MonoBehaviour
     {
         return ammo;
     }
-
-    public void resetAmmo()
-    {
-        ammo = inAmmo;
-    }
 }
