@@ -15,8 +15,10 @@ public class AmmoScript : MonoBehaviour
     public int Ammo { get { return ammo; } }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Equals(collision.gameObject.name, "Ammo"))
+        Debug.Log("precollision");
+        if (collision.gameObject.layer == 6)
         {
+            Debug.Log("collided");
             Destroy(collision.gameObject);
             ammo++;
         }
