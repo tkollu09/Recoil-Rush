@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class LifeScript : MonoBehaviour
 {
-    [SerializeField] private GameObject[] hearts;
     private Transform pos;
     private Rigidbody2D rb;
 
@@ -17,16 +16,8 @@ public class LifeScript : MonoBehaviour
     {
         if (pos.position.y < -15 || Input.GetKeyDown(KeyCode.R))
         {
-            //ResetPlayerPosition();
             ReloadLevel();
         }
-    }
-
-
-    private void ResetPlayerPosition()
-    {
-        rb.linearVelocity = Vector2.zero;
-        transform.position = new Vector2(-3, 0);
     }
 
     public void ReloadLevel()
