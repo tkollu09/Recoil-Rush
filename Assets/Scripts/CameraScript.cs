@@ -5,7 +5,7 @@ public class CameraScript : MonoBehaviour
     [SerializeField] private GameObject player;
     private Transform camPos;
     private Vector3 pos;
-    private bool followP = true;
+    public bool followP = true;
     private void Start()
     {
         camPos = GetComponent<Transform>();
