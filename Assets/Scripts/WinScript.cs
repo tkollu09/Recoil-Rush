@@ -24,7 +24,7 @@ public class WinScript : MonoBehaviour
         Debug.Log("player won");
         player.transform.SetParent(transform);
         cam.followP = false; 
-        speed = 0.5f;
+        speed = 2f;
         PlayerPrefs.SetInt("playerLevel", 1);
     }
 

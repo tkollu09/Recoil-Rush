@@ -8,6 +8,7 @@ public class TitleScript : MonoBehaviour
     private int playerLevel = 1;
     [SerializeField] private GameObject mainPanel;
     [SerializeField] private GameObject levelsPanel;
+    [SerializeField] private GameObject creditsPanel;
     [SerializeField] private List<Button> levelButtons;
 
     private void Start()
@@ -33,6 +34,12 @@ public class TitleScript : MonoBehaviour
     {   
         mainPanel.SetActive(false);
         levelsPanel.SetActive(true);
+    }
+
+    public void Credits()
+    {
+        mainPanel.SetActive(false);
+        creditsPanel.SetActive(true);
     }
 
     public void openLevel(int level)
