@@ -22,7 +22,6 @@ public class MovementScript : MonoBehaviour
     {
         
         rb.linearVelocity = Vector2.zero;
-        Debug.Log(direction);
         rb.AddForce(direction * force, ForceMode2D.Impulse);
         
     }

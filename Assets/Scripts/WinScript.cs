@@ -1,9 +1,12 @@
 using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class WinScript : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] CameraScript cam;
+    [SerializeField] int levelNum;
     private float speed = 0f;
     Vector2 pos;
 
@@ -25,8 +28,16 @@ public class WinScript : MonoBehaviour
         player.transform.SetParent(transform);
         cam.followP = false; 
         speed = 2f;
-        PlayerPrefs.SetInt("playerLevel", 1);
+        PlayerPrefs.SetInt("playerLevel", levelNum+1);
+        StartCoroutine(nextLevel());
     }
+
+    IEnumerator nextLevel()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(levelNum + 1);
+    }
+
 
     private void FixedUpdate()
     {
