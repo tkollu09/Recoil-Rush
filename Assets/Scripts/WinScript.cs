@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class WinScript : MonoBehaviour
 {
     [SerializeField] GameObject player;
+    [SerializeField] Transform truck;
     [SerializeField] CameraScript cam;
     [SerializeField] int levelNum;
     private float speed = 0f;
@@ -25,7 +26,7 @@ public class WinScript : MonoBehaviour
     private void winLevel()
     {
         Debug.Log("player won");
-        player.transform.SetParent(transform);
+        player.transform.SetParent(truck);
         cam.followP = false; 
         speed = 2f;
         PlayerPrefs.SetInt("playerLevel", levelNum+1);
@@ -41,8 +42,8 @@ public class WinScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        pos = transform.position;
+        pos = truck.position;
         pos = new Vector2 (pos.x + speed, pos.y);
-        transform.position = pos;
+        truck.position = pos;
     }
 }

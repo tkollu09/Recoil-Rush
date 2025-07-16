@@ -1193,8 +1193,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: " - @superdogecat (tiktok) (game Idea)\n - @vibingaustin (tiktok) (Game
-    Idea)\n - @lovehasi7sy (tiktok) (game Art)\n - @loganShields_07 (tiktok) (game
-    art)\n"
+    Idea)\n - @loganShields_07 (tiktok) (game art)\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9315592fdd372004493c414774c0cfd1, type: 2}
   m_sharedMaterial: {fileID: 6028898583663402142, guid: 9315592fdd372004493c414774c0cfd1, type: 2}
